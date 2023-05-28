@@ -1,7 +1,61 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './ProfilePage.css'; // Import CSS file for styling
+import Activity from './Activity';
+
 
 const ProfilePage = () => {
+
+  const data = [
+  {
+    date: "2023-05-30 09:00 AM",
+    activity: "A",
+    remarks: "Remark 1",
+    points: 100
+  },
+  {
+    date: "2023-06-02 02:30 PM",
+    activity: "B",
+    remarks: "Remark 2",
+    points: 150
+  },
+  {
+    date: "2023-06-05 11:45 AM",
+    activity: "C",
+    remarks: "Remark 3",
+    points: 50
+  },
+  {
+    date: "2023-06-08 08:15 AM",
+    activity: "D",
+    remarks: "Remark 4",
+    points: 20
+  },
+  {
+    date: "2023-06-12 04:20 PM",
+    activity: "A",
+    remarks: "Remark 1",
+    points: 100
+  },
+  {
+    date: "2023-06-15 04:20 PM",
+    activity: "A",
+    remarks: "Remark 1",
+    points: 100
+  },
+]
+
+const formDataTemplate = {
+  date: "",
+  activity: "",
+  remarks: "",
+}
+
+  const [activityLog, setActivityLog] = useState(data)
+  const [formData, setFormData] = useState(formDataTemplate)
+
+  useEffect(()=>{
+    console.log(activityLog)
+  },[activityLog])
 
   const handlePageChange = (page) => {
     // Calculate the starting and ending indices based on the page number
@@ -14,7 +68,39 @@ const ProfilePage = () => {
     //const displayedEntries = entries.slice(startIdx, endIdx);
     //setDisplayedEntries(displayedEntries);
   };
-  
+
+  const handleSubmit = (event) =>{
+    event.preventDefault()
+    if (!formData.date || !formData.activity || !formData.remarks){
+      /*Error pop-up message for empty submission*/
+      console.log("error")
+    }else{
+      setActivityLog(prevState => 
+        [...prevState, 
+          {...formData,
+          points: formData.activity === "A" ? 100
+            : formData.activity === "B" ? 150
+            : formData.activity === "C" ? 50
+            : formData.activity === "D" ? 20
+            : ""}])
+      }
+    /*setFormData(formDataTemplate)*/
+
+
+  }
+
+  const handleChange = (event) =>{
+    event.preventDefault()
+    const {value, name} = event.target
+    console.log(name, value)
+    setFormData(prevState => {
+      return {
+        ...prevState,
+        [name]: value
+      }
+    })
+
+  }
   return (
     <div className="profile-container">
       <div className="left-container">
@@ -33,7 +119,11 @@ const ProfilePage = () => {
           <p className="detail-item">Contact Number: 123-456-7890</p>
           <div className="points-card">
             <p className="points">Points Achieved:</p>
-            <p className="points-value">500</p>
+            <p className="points-value">
+              {activityLog.reduce((prev, curr) =>{
+                return prev + curr.points
+              }, 0)}
+              </p>
           </div>
         </div>
       </div>
@@ -42,28 +132,35 @@ const ProfilePage = () => {
         <div className="form-container">
           {/* Form */}
           <div className="form-inner-container">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="form-general">
                 <div className="form-left-column">
                   <div className="form-row">
 
                     <label htmlFor="dropdown">Select an option:</label>
-                    <select id="dropdown">
-                      <option value="a">A</option>
-                      <option value="b">B</option>
-                      <option value="c">C</option>
-                      <option value="d">D</option>
+                    <select id="dropdown" name="activity" onChange={handleChange} >
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
                     </select>
                   </div>
                   <div className="form-row">
                     <label htmlFor="datetime">Select a date and time:</label>
-                    <input type="datetime-local" id="datetime" />
+                    <input type="datetime-local" id="datetime" name="date" onChange={handleChange} />
                   </div>
                 </div>
                 <div className="form-right-column">
                   <div className="form-row">
                     <label htmlFor="remark">Remark:</label>
-                    <textarea id="remark" rows="4" cols="50"></textarea>
+                    <textarea 
+                    id="remark" 
+                    rows="4" 
+                    cols="50" 
+                    name="remarks" 
+                    value = {formData.remarks} 
+                    onChange={handleChange}>
+                    </textarea>
                   </div>
                 </div>
               </div>
@@ -84,36 +181,15 @@ const ProfilePage = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>2023-05-30 09:00 AM</td>
-                <td>Type 1</td>
-                <td>Remark 1</td>
-                <td className="points-cell">100</td>
-              </tr>
-              <tr>
-                <td>2023-06-02 02:30 PM</td>
-                <td>Type 2</td>
-                <td>Remark 2</td>
-                <td className="points-cell">150</td>
-              </tr>
-              <tr>
-                <td>2023-06-05 11:45 AM</td>
-                <td>Type 3</td>
-                <td>Remark 3</td>
-                <td className="points-cell">80</td>
-              </tr>
-              <tr>
-                <td>2023-06-08 08:15 AM</td>
-                <td>Type 4</td>
-                <td>Remark 4</td>
-                <td className="points-cell">120</td>
-              </tr>
-              <tr>
-                <td>2023-06-12 04:20 PM</td>
-                <td>Type 5</td>
-                <td>Remark 5</td>
-                <td className="points-cell">200</td>
-              </tr>
+              {activityLog.map((item,index)  => 
+              <Activity
+              key = {index}
+              date = {item.date}
+              activity = {item.activity}
+              remarks = {item.remarks}
+              points = {item.points}
+
+              />)}
             </tbody>
           </table>
 
