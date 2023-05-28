@@ -1,0 +1,156 @@
+.profile-container {
+  display: flex;
+  justify-content: flex-start;
+  
+  height: 100vh;
+  text-align: center;
+}
+
+.left-container {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+}
+
+.picture-container {
+  text-align: center;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+}
+
+.details-container {
+  padding: 50px;
+}
+
+.detail-item {
+  margin: 20px;
+}
+
+.points-card {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+.points {
+  font-size: 18px;
+  color: #888;
+}
+
+.points-value {
+  font-size: 24px;
+  color: green;
+  font-weight: bold;
+}
+
+.right-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-general{
+  display: flex;
+}
+.form-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.form-left-column {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-right-column {
+  flex: .7;
+  margin-left: 30px;
+}
+
+.form-inner-container {
+  margin-top: 20px;
+}
+
+.form-title{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-row {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  margin-right: 10px;
+}
+
+.form-row select,
+.form-row input,
+.form-row textarea {
+  flex: 1;
+  padding: 5px;
+}
+
+button[type="submit"] {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: darkgreen;
+}
+
+
+.records-table{
+  flex: 2;
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.points-cell {
+  font-weight: bold;
+  color: green;
+}
+
+.pagination{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
