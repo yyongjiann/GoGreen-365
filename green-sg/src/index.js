@@ -5,6 +5,7 @@ import Map from "./pages/Map";
 import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Page() {
   return (
