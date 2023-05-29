@@ -20,7 +20,14 @@
     margin-top: 10px;
     font-family: 'Magilio', sans-serif;
   }
-  
+  .navBarLogo{
+    height: auto;
+    width: auto;
+    max-height: 72px;
+    max-width: 200px;
+    padding-left: 15px;
+
+  }
   .horizontalNav {
     list-style-type: none;
     margin: 0;

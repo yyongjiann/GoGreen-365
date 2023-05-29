@@ -80,7 +80,68 @@ const data = [
         address: "16A Dempsey Rd, Singapore 247695", 
         mapLink: "https://goo.gl/maps/wMxhkqM9AW2HW2gJ8",
         region: "Central"
-    }
+    },
+    {
+        name: "Poison Ivy",
+        link: "https://bollywoodfarms.com/poison-ivy-bistro/",
+        description: "Poison Ivy Bistro takes farm-to-table food back to earth with its delicious, wholesome cooking style at cheap and cheerful prices! We also use our fresh produce for value-added farm products such as our famous Banana cake; tapioca and sweet potato chips, savoury sambals and kaya. Our à la carte menu is seasonal and changes often to bring you the freshest food.",
+        openingHours: "10am - 4pm (Thursday and Friday), 7am - 6 pm (Weekend), closed from Monday to Wednesday",
+        location: [1.4185622774032485, 103.71651679582273],
+        address: "100 Neo Tiew Rd, Singapore 719026", 
+        mapLink: "https://goo.gl/maps/h99QmPdmrwqZwkkm7",
+        region: "West"
+    },
+    {
+        name: "The Sapling",
+        link: "https://thesapling.shatec.sg/",
+        description: (`Unveiling The Sapling’s Sustainability Plan
+
+        The Sapling will be progressing towards responsible consumerism and wellness by:
+        
+        1. Reducing Single-Use Plastic. We are eschewing single-use plastics and other non-biodegradable materials in favour of eco-friendly alternatives for takeaway/delivery.
+        2. Using Sustainable Source Ingredients. We support local produce and assess our suppliers based on sustainable practices.
+        3. Creating Zero Food Waste Dishes. By repurposing our ingredients through an effective menu planning system, our dishes are created to use up all edible parts.
+        4. Serving Wellness Cuisines. We care for your health and aim to provide balance, nutrient-dense foods with a focus on goodness of natural ingredients on your plate.
+        
+        
+        Dine healthy and responsibly with us today at The Sapling!`),
+        openingHours: "11am - 3pm (Monday to Thursday), 11am - 3pm and 6pm to 10pm (Saturday), closed on Friday and Sunday",
+        address: "21 Bukit Batok Street 22, Shatec, Singapore 659589", 
+        mapLink: "https://goo.gl/maps/Lo2fQ29a2EaQjhcL7",
+        region: "West"
+    },
+
+  {
+        name: "Aperia Mall Level 1 Lobby A",
+        address: "12 Kallang Ave, Singapore 339511", 
+        mapLink: "https://goo.gl/maps/QgR7Ma7zhUeznj6E8",
+        region: "Central"
+    },
+    {
+        name: "Ascent Level 1 Retail Lift Lobby",
+        address: "2 Science Park Dr, Singapore Science Park 1, 118222", 
+        mapLink: "https://goo.gl/maps/g4eWsCRsWjeaqdwz9",
+        region: "Central"
+    },
+    {
+        name: "Bedok Mall B2 Linkway to MRT",
+        address: "311 New Upper Changi Rd, Singapore 467360", 
+        mapLink: "https://goo.gl/maps/dNQy4TTfPesXcfdp8",
+        region: "East"
+    },
+    {
+        name: "Bishan Sport Centre Drop Off Lobby",
+        address: "5 Bishan Street 14, Singapore 579783", 
+        mapLink: "https://goo.gl/maps/mD7Cs2Tz2ZMdHCu3A",
+        region: "Central"
+    },
+    {
+        name: "Bugis+ L1 External Walkway, facing Bugis Street",
+        address: "201 Victoria St, Singapore 188067", 
+        mapLink: "https://goo.gl/maps/Yqi2bhqrKoaE1WHBA",
+        region: "Central"
+    },
+
 ]
 
 

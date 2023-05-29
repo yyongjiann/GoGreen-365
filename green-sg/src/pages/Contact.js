@@ -10,10 +10,10 @@ const ContactPage = () => {
     <div className="container mt-5 my-5 text-center">
       <h1 style={{ fontFamily: 'Arial', fontWeight: 'bold' }}>Armchair Coders</h1>
       <div className="my-5 row">
-        <ProfileCard image={yizhong} name="Chen Yizhong" description="I love coding! Contact him at " contact="yizhong187@gmail.com"></ProfileCard>
-        <ProfileCard image={ziyue} name="Chu Ziyue" description="Wannabe Coder. Contact him at " contact="chuziyue0928@gmail.com"></ProfileCard>
+        <ProfileCard image={yizhong} name="Chen Yizhong" description={["I love coding!", <br/>, "Contact him at "]}  contact="yizhong187@gmail.com"></ProfileCard>
+        <ProfileCard image={ziyue} name="Chu Ziyue" description={["Wannabe Coder." , <br/>, "Contact him at "]}contact="chuziyue0928@gmail.com"></ProfileCard>
         <ProfileCard image={junhan} name="Ho Jun Han" description="Did not go to Harvard. Contact him at " contact="hojunhan49@gmail.com"></ProfileCard>
-        <ProfileCard image={yongjian} name="Huang Yongjian" description="I am here to rock your world. Contact him at " contact="huangyj2002@gmail.com"></ProfileCard>
+        <ProfileCard image={yongjian} name="Huang Yongjian" description={["Here to rock your world.", <br/>, "Contact him at "]} contact="huangyj2002@gmail.com"></ProfileCard>
       </div>
     </div>
   );
