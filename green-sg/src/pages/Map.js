@@ -41,6 +41,8 @@ const Map = () => {
     </Pin>
     )
 
+  console.log(`http://localhost:5001/api/data/?region=${selectedRegion}`)
+
   return( 
     <div id="mapPage">
       <h1>Map</h1>
@@ -51,11 +53,11 @@ const Map = () => {
         <label htmlFor="region">Select a region:</label>
         <select id="region" value={selectedRegion} onChange={handleSelectRegion}>
           <option value="">Select Region</option>
-          <option value="Central Region">Central Region</option>
-          <option value="East Region">East Region</option>
-          <option value="North Region">North Region</option>
-          <option value="North-East Region">North-East Region</option>
-          <option value="West Region">West Region</option>
+          <option value="Central">Central</option>
+          <option value="East">East</option>
+          <option value="North">North</option>
+          <option value="North-East">North-East</option>
+          <option value="West">West</option>
         </select>
         <p>Selected Region: {selectedRegion}</p>
       </div>
