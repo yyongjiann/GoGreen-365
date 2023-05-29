@@ -1,16 +1,14 @@
 import Map from "./component/Map"
-import Header from "./component/Header";
 
 function App () {
 
 
   return(
 
-    <div>
-      <Header />
+    <div className="image-container">
+    
 
-      <p>hello</p>
-      <Map />
+      <Map></Map>
       </div>
     
 
