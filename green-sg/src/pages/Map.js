@@ -4,7 +4,7 @@ import Popup from "../Popup"
 import MapComponent from "../MapComponent";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form'
+import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
