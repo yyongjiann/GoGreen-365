@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Donate from "./pages/Donate";
 
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
           <Route index element={<Map />} />
           <Route path="profile" element={<Profile />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="donate" element={<Donate />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
