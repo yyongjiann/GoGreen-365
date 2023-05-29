@@ -1,3 +1,5 @@
+import DropPoo from "./component/DropPoo";
+import DropDown from "./component/DropPoo";
 import Map from "./component/Map"
 
 function App () {
@@ -8,7 +10,7 @@ function App () {
     <div className="image-container">
     
 
-      <Map></Map>
+      <DropPoo></DropPoo>
       </div>
     
 
