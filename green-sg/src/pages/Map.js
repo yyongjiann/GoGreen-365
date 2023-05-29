@@ -20,17 +20,32 @@ const Map = () => {
     setSelectedRegion(event.target.value);
   };
 
-
-  const [selectedOptions, setSelectedOptions] = React.useState([]);
+  const [selectedTypes, setSelectedTypes] = React.useState([]);
 
   const handleCheckboxChange = (event) => {
     const value = event.target.value;
-    if (selectedOptions.includes(value)) {
-      setSelectedOptions(selectedOptions.filter((option) => option !== value));
+    if (selectedTypes.includes(value)) {
+      setSelectedTypes(selectedTypes.filter((type) => type !== value));
     } else {
-      setSelectedOptions([...selectedOptions, value]);
+      setSelectedTypes([...selectedTypes, value]);
     }
   };
+
+  const allTypes = (listOfTypes) => {
+    if (listOfTypes.length === 0) {
+      return ""
+    }
+    else if (listOfTypes.length === 1) {
+      return `type=${listOfTypes[0]}&`
+    }
+    else {
+      return `type=${listOfTypes[0]}&${allTypes(listOfTypes.slice(1))}`
+    }
+  }
+
+  console.log(allTypes(selectedTypes))
+
+  console.log(`http://localhost:5001/api/data/?${allTypes(selectedTypes)}region=${selectedRegion}`)
 
   const allPins = pinId.map(
     id => 
@@ -41,8 +56,6 @@ const Map = () => {
     </Pin>
     )
 
-  console.log(`http://localhost:5001/api/data/?region=${selectedRegion}`)
-
   return( 
     <div id="mapPage">
       <h1>Map</h1>
@@ -52,11 +65,10 @@ const Map = () => {
       <div>
         <label htmlFor="region">Select a region:</label>
         <select id="region" value={selectedRegion} onChange={handleSelectRegion}>
-          <option value="">Select Region</option>
+          <option value="All">All</option>
           <option value="Central">Central</option>
           <option value="East">East</option>
           <option value="North">North</option>
-          <option value="North-East">North-East</option>
           <option value="West">West</option>
         </select>
         <p>Selected Region: {selectedRegion}</p>
@@ -67,8 +79,8 @@ const Map = () => {
           <label>
             <input
               type="checkbox"
-              value="educational"
-              checked={selectedOptions.includes('educational')}
+              value="Educational"
+              checked={selectedTypes.includes('Educational')}
               onChange={handleCheckboxChange}
             />
             Educational
@@ -78,8 +90,8 @@ const Map = () => {
           <label>
             <input
               type="checkbox"
-              value="f&b"
-              checked={selectedOptions.includes('f&b')}
+              value="Dining"
+              checked={selectedTypes.includes('Dining')}
               onChange={handleCheckboxChange}
             />
             F&amp;B
@@ -89,16 +101,15 @@ const Map = () => {
           <label>
             <input
               type="checkbox"
-              value="recycling machines"
-              checked={selectedOptions.includes('recycling machines')}
+              value="Recycling"
+              checked={selectedTypes.includes('Recycling')}
               onChange={handleCheckboxChange}
             />
             Recycling Machines
           </label>
         </div>
-      <p>Selected Activity Types: {selectedOptions.join(', ')}</p>
+      <p>Selected Activity Types: {selectedTypes.join(', ')}</p>
       </div>
-      <MapComponent></MapComponent>
     </div>
     )
   };
