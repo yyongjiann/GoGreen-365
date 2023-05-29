@@ -10,3 +10,4 @@ const App = () => {
     </div>
   );
 }
+export default app
