@@ -8,6 +8,10 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+
+
+
+
 const Map = () => {
 
   const [currentId, setCurrentId] = React.useState(0)
@@ -37,6 +41,8 @@ const Map = () => {
     }
   };
 
+
+
   const allPins = pinId.map(
     id => 
     <Pin 
@@ -45,31 +51,23 @@ const Map = () => {
         handleClick={handleClick}>
     </Pin>
     )
+  
+  const [dataReceived, setDataReceived] = React.useState([])
+  React.useEffect(()=>{
+    const getData = async () =>{
+      try{
+        const addr = `http://localhost:5001/api/data/?region=${selectedRegion}${selectedOptions.length > 0 ? selectedOptions.map(option => `&type=${option}`).join('') : ''}`
+        const response = await fetch(addr)
+        const data = await response.json()
+        setDataReceived(data)
+      }catch(error){
+        console.log("Error encountered during GET request: ", error.message)
+      }
+    }
+    getData()
+  },[selectedRegion, selectedOptions]) 
 
-  console.log(`http://localhost:5001/api/data/?region=${selectedRegion}${selectedOptions.length > 0 ? selectedOptions.map(option => `&type=${option}`).join('') : ''}`)
-
-  const dataReceived =  [{
-        name: "NEWater Visitor Centre",
-        link: "https://www.pub.gov.sg/Pages/NEWaterVisitorCentre.aspx",
-        description: "The NEWater Visitor Centre (NVC) is an education hub that promotes water sustainability in Singapore and shares how NEWater is produced. The Centre offers a fun-filled and enriching time for visitors of all ages, with interactive tours and educational workshops.",
-        openingHours: "9am - 5:30pm (Tuesdays to Sundays, including public holidays), closed on Mondays",
-        location: [1.3244821700004, 103.95868792465795],
-        address: "20 Koh Sek Lim Rd, Singapore 486593",
-        mapLink: "https://goo.gl/maps/4WDnrro6AJx4ZvqWA",
-        region: "", 
-        type: "educational"
-    },
-    {
-        name: "Sustainable Singapore Gallery",
-        link: "https://www.terra.sg/ssg",
-        description: "Located on the second floor of the Marina Barrage, the Sustainable Singapore Gallery is a modern and interactive gallery that provides an overview of Singapore’s sustainable development. This 1,618 square-metre gallery is organised into six zones, labelled Zone A to Zone F, each providing information about a different aspect of sustainability in Singapore. ",
-        openingHours: "9am - 6pm daily (except Tuesdays), including weekends & public holidays",
-        location: [1.2804239649083744, 103.87111803815175],
-        address: "8 Marina Gardens Dr, Singapore 018951", 
-        mapLink: "https://goo.gl/maps/kuLPtuknEcMQEkDCA",
-        region: "",
-        type: "educational"
-    }]
+  
 
     const listItems = dataReceived.map((element, index) => (
       <ListGroup.Item key={index}>
@@ -78,7 +76,7 @@ const Map = () => {
         <p>{element.description}</p>
         <p>Address: <a href={element.mapLink}>{element.address}</a></p>
       </ListGroup.Item>
-    ));
+    )); 
 
   return( 
     <div id="mapPage">
@@ -89,14 +87,14 @@ const Map = () => {
       <div>
         <label htmlFor="region">Select a region:</label>
         <select id="region" value={selectedRegion} onChange={handleSelectRegion}>
-          <option value="">Select Region</option>
+          <option value="All">All</option>
           <option value="Central">Central</option>
           <option value="East">East</option>
           <option value="North">North</option>
-          <option value="North-East">North-East</option>
           <option value="West">West</option>
+          
+          
         </select>
-        <p>Selected Region: {selectedRegion}</p>
       </div>
       <div>
         <label>Activity Type:</label>
@@ -133,7 +131,6 @@ const Map = () => {
             Recycling Machines
           </label>
         </div>
-      <p>Selected Activity Types: {selectedOptions.join(', ')}</p>
       </div>
       {selectedOptions.length > 0 && (
         <ListGroup>{listItems}</ListGroup>

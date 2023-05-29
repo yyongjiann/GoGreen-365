@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 const apiRouter = require("./controller/route")
 const Data = require("./models/data")
-//const RecyclePoint = require("./models/recyclePoints")
+
 const app = express() 
 const {data} = require("./data/mockdata")
 
@@ -19,17 +19,11 @@ console.log('connecting to', MONGODB_URI)
 mongoose.connect(MONGODB_URI)
   .then(() => {
     console.log('connected to MongoDB')
-      Data.deleteMany({}).then(function(){
-        console.log("Database reset")  // Success
-    }).catch(function(error){
-        console.log(error)      // Failure
-    })  
-      Data.insertMany(data).then(function(){
-        console.log("Data inserted")  // Success
-    }).catch(function(error){
-        console.log(error)      // Failure
-    })  
-
+    Data.deleteMany({})
+    .then(()=> console.log("Database reset"))
+    .then(()=> Data.insertMany(data))
+    .then(()=> console.log("Data inserted")) 
+    .catch(error => console.log(error))      
   })
   .catch((error) => {
     console.log('error connecting to MongoDB:', error.message)
