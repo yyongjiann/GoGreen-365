@@ -1,0 +1,49 @@
+* {font-family: Arial, Helvetica, sans-serif;}
+
+@font-face {
+  font-family: 'Magilio';
+  src: url('./pages/fonts/magilio-font/MagilioRegular-Yzv2O.ttf') format('truetype'),
+        url('./pages/fonts/magilio-font/MagilioRegular-8Mxvg.otf') format('opentype');
+  /* Add more formats if available */
+}
+
+.navBar {
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height:100px
+  }
+  
+  .navBarTitle{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: 'Magilio', sans-serif;
+  }
+  
+  .horizontalNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+  
+  .horizontalNav li {
+    margin-right: 10px;
+  }
+  
+  .horizontalNav li:last-child {
+    margin-right: 0;
+  }
+  
+  .horizontalNav li a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+  }
+  
+  .horizontalNav li a:hover {
+    background-color: #ddd;
+  }
