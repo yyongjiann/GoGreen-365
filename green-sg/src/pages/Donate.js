@@ -24,7 +24,7 @@ const Donate = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('SOMESERVERENDPOINT', {
+            const response = await fetch('http://localhost:5001/api/post', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
