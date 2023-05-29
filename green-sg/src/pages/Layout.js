@@ -5,7 +5,7 @@ const Layout = () => {
   return (
     <>
       <nav className="navBar">
-        <h1 className='navBarTitle'>Environmental <br /> Friends</h1>
+        <h1 className='navBarTitle'>Environmental Friends</h1>
 
         <ul className="horizontalNav">
           <li>
