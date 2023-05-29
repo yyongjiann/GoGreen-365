@@ -2,6 +2,11 @@ import React from "react";
 import Pin from "../Pin"
 import Popup from "../Popup"
 import MapComponent from "../MapComponent";
+import ListGroup from 'react-bootstrap/ListGroup';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Map = () => {
 
@@ -41,7 +46,39 @@ const Map = () => {
     </Pin>
     )
 
-  console.log(`http://localhost:5001/api/data/?region=${selectedRegion}`)
+  console.log(`http://localhost:5001/api/data/?region=${selectedRegion}${selectedOptions.length > 0 ? selectedOptions.map(option => `&type=${option}`).join('') : ''}`)
+
+  const dataReceived =  [{
+        name: "NEWater Visitor Centre",
+        link: "https://www.pub.gov.sg/Pages/NEWaterVisitorCentre.aspx",
+        description: "The NEWater Visitor Centre (NVC) is an education hub that promotes water sustainability in Singapore and shares how NEWater is produced. The Centre offers a fun-filled and enriching time for visitors of all ages, with interactive tours and educational workshops.",
+        openingHours: "9am - 5:30pm (Tuesdays to Sundays, including public holidays), closed on Mondays",
+        location: [1.3244821700004, 103.95868792465795],
+        address: "20 Koh Sek Lim Rd, Singapore 486593",
+        mapLink: "https://goo.gl/maps/4WDnrro6AJx4ZvqWA",
+        region: "", 
+        type: "educational"
+    },
+    {
+        name: "Sustainable Singapore Gallery",
+        link: "https://www.terra.sg/ssg",
+        description: "Located on the second floor of the Marina Barrage, the Sustainable Singapore Gallery is a modern and interactive gallery that provides an overview of Singapore’s sustainable development. This 1,618 square-metre gallery is organised into six zones, labelled Zone A to Zone F, each providing information about a different aspect of sustainability in Singapore. ",
+        openingHours: "9am - 6pm daily (except Tuesdays), including weekends & public holidays",
+        location: [1.2804239649083744, 103.87111803815175],
+        address: "8 Marina Gardens Dr, Singapore 018951", 
+        mapLink: "https://goo.gl/maps/kuLPtuknEcMQEkDCA",
+        region: "",
+        type: "educational"
+    }]
+
+    const listItems = dataReceived.map((element, index) => (
+      <ListGroup.Item key={index}>
+        <h3><a href={element.link}>{element.name}</a></h3>
+        <p>Opening Hours: {element.openingHours}</p>
+        <p>{element.description}</p>
+        <p>Address: <a href={element.mapLink}>{element.address}</a></p>
+      </ListGroup.Item>
+    ));
 
   return( 
     <div id="mapPage">
@@ -67,8 +104,8 @@ const Map = () => {
           <label>
             <input
               type="checkbox"
-              value="educational"
-              checked={selectedOptions.includes('educational')}
+              value="Educational"
+              checked={selectedOptions.includes('Educational')}
               onChange={handleCheckboxChange}
             />
             Educational
@@ -78,8 +115,8 @@ const Map = () => {
           <label>
             <input
               type="checkbox"
-              value="f&b"
-              checked={selectedOptions.includes('f&b')}
+              value="Dining"
+              checked={selectedOptions.includes('Dining')}
               onChange={handleCheckboxChange}
             />
             F&amp;B
@@ -89,8 +126,8 @@ const Map = () => {
           <label>
             <input
               type="checkbox"
-              value="recycling machines"
-              checked={selectedOptions.includes('recycling machines')}
+              value="Recycling"
+              checked={selectedOptions.includes('Recycling')}
               onChange={handleCheckboxChange}
             />
             Recycling Machines
@@ -98,7 +135,10 @@ const Map = () => {
         </div>
       <p>Selected Activity Types: {selectedOptions.join(', ')}</p>
       </div>
-      <MapComponent></MapComponent>
+      {selectedOptions.length > 0 && (
+        <ListGroup>{listItems}</ListGroup>
+      )}
+      
     </div>
     )
   };
