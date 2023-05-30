@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import activites from "../activites";
 
 
 
@@ -81,12 +82,12 @@ const Map = () => {
     <div className="container">
       <div className="row justify-content-center">
         <div id="mapPage">
-          <h1 className="my-4 text-center">Map</h1>
+          <h1 className="my-4 text-center">Activities</h1>
 {/*           
           {allPins}
           <p>{currentId}</p>
           <div>{currentId ? <Popup handleClick={handleClick} /> : null}</div> */}
-          <div className="row justify-content-center mb-5">
+          <div className="mt-4 row justify-content-center mb-5">
           <div className="col-md-6">
             <div className="text-center">
             <label className="fw-bold form-label" htmlFor="region">Select a region:</label>
