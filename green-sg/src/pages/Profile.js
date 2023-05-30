@@ -125,7 +125,7 @@ const formDataTemplate = {
                 </div>
                 <div className="form-right-column">
                   <div className="form-row">
-                    <label htmlFor="remark">Remark:</label>
+                    <label htmlFor="remark">Remarks:</label>
                     <textarea 
                     id="remark" 
                     rows="4" 
@@ -141,7 +141,6 @@ const formDataTemplate = {
             </form>
           </div>
         </div>
-        {/* Lorem Ipsum code */}
 
         <div className="records-table">
           <table>

@@ -6,7 +6,11 @@
   font-family: 'Magilio';
   src: url('./pages/fonts/magilio-font/MagilioRegular-Yzv2O.ttf') format('truetype'),
         url('./pages/fonts/magilio-font/MagilioRegular-8Mxvg.otf') format('opentype');
-  /* Add more formats if available */
+ 
+}
+
+.custom-green {
+  color: #006400; 
 }
 
 .navBar {
