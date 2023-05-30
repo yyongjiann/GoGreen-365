@@ -44,4 +44,15 @@ GoGreen 365 is a web app developed to empower individuals in Singapore to make d
    MONGODB_URI = mongodb+srv://<username>:<password>@clustername.mongodb.net/test?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true
 ```
 
+4. Run npm start on both the frontend and backend folder on two separate terminals:
+   ```bash
+   cd green-sg
+   npm start
+   cd ..
+   cd backend
+   npm start
+   
+5. The website will be live on http://localhost:3000/
+
+
 
