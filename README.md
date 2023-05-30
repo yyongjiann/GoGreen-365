@@ -20,10 +20,10 @@ GoGreen 365 is a web app developed to empower individuals in Singapore to make d
    ```bash
    git clone https://github.com/Krueless/GoGreen-365.git
    
-2. From the root directory, toggle to the frontend and backend folders to install the necessary dependencies:
+2. From the root directory, toggle to the **frontend (named green-sg)  and backend folders** to install the necessary dependencies:
   
    ```bash
-   cd frontend
+   cd green-sg
    npm i
    cd ..
    cd backend
