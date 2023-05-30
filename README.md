@@ -11,7 +11,7 @@ A green initiative by passionate youths, developed using MERN stack.
 
 ## Project Overview
 
-GoGreen 365 is a web app developed to empower individuals in Singapore to make daily choices that have a positive impact on the environment. As the team behind GoGreen 365, we believe that every small action counts when it comes to protecting our planet and by engaging in sustainable activities, you can do your part to contribute to the collective effort of combating climate change.
+GoGreen 365 is a Web Application developed to empower individuals in Singapore to make daily choices that have a positive impact on the environment. As the team behind GoGreen 365, we believe that every small action counts when it comes to protecting our planet and by engaging in sustainable activities, you can do your part to contribute to the collective effort of combating climate change.
 
 ## Installation
 
