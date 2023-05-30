@@ -83,6 +83,7 @@ const data = [
     },
     {
         name: "Poison Ivy",
+        type: "Dining",
         link: "https://bollywoodfarms.com/poison-ivy-bistro/",
         description: "Poison Ivy Bistro takes farm-to-table food back to earth with its delicious, wholesome cooking style at cheap and cheerful prices! We also use our fresh produce for value-added farm products such as our famous Banana cake; tapioca and sweet potato chips, savoury sambals and kaya. Our à la carte menu is seasonal and changes often to bring you the freshest food.",
         openingHours: "10am - 4pm (Thursday and Friday), 7am - 6 pm (Weekend), closed from Monday to Wednesday",
@@ -93,6 +94,7 @@ const data = [
     },
     {
         name: "The Sapling",
+        type: "Dining",
         link: "https://thesapling.shatec.sg/",
         description: (`Unveiling The Sapling’s Sustainability Plan
 
@@ -113,36 +115,42 @@ const data = [
 
   {
         name: "Aperia Mall Level 1 Lobby A",
+        type: "Recycling",
         address: "12 Kallang Ave, Singapore 339511", 
         mapLink: "https://goo.gl/maps/QgR7Ma7zhUeznj6E8",
         region: "Central"
     },
     {
         name: "Ascent Level 1 Retail Lift Lobby",
+        type: "Recycling",
         address: "2 Science Park Dr, Singapore Science Park 1, 118222", 
         mapLink: "https://goo.gl/maps/g4eWsCRsWjeaqdwz9",
         region: "Central"
     },
     {
         name: "Bedok Mall B2 Linkway to MRT",
+        type: "Recycling",
         address: "311 New Upper Changi Rd, Singapore 467360", 
         mapLink: "https://goo.gl/maps/dNQy4TTfPesXcfdp8",
         region: "East"
     },
     {
         name: "Bishan Sport Centre Drop Off Lobby",
+        type: "Recycling",
         address: "5 Bishan Street 14, Singapore 579783", 
         mapLink: "https://goo.gl/maps/mD7Cs2Tz2ZMdHCu3A",
         region: "Central"
     },
     {
         name: "Bugis+ L1 External Walkway, facing Bugis Street",
+        type: "Recycling",
         address: "201 Victoria St, Singapore 188067", 
         mapLink: "https://goo.gl/maps/Yqi2bhqrKoaE1WHBA",
         region: "Central"
     },
     {
         name: "Woodlands Sports Centre Stadium Gate 3",
+        type: "Recycling",
         address: "1 Woodlands Street 13, Singapore 738597", 
         mapLink: "https://goo.gl/maps/45apALzafaretPQx8",
         region: "North"

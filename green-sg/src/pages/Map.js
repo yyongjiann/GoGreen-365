@@ -72,7 +72,7 @@ const Map = () => {
   const listItems = dataReceived.map((element, index) => (
     <ListGroup.Item key={index}>
       <h3><a href={element.link}>{element.name}</a></h3>
-      <p>Opening Hours: {element.openingHours}</p>
+      {element.openingHours && <p>Opening Hours: {element.openingHours}</p>}
       <p>{element.description}</p>
       <p>Address: <a href={element.mapLink}>{element.address}</a></p>
     </ListGroup.Item>
@@ -82,7 +82,7 @@ const Map = () => {
     <div className="container">
       <div className="row justify-content-center">
         <div id="mapPage">
-          <h1 className="my-4 text-center">Activities</h1>
+          <h1 className="my-4 text-center" style={{ fontFamily: "Magilio" }}>Activities</h1>
 {/*           
           {allPins}
           <p>{currentId}</p>

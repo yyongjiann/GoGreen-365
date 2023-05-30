@@ -5,11 +5,12 @@ import logo1 from "./images/logo1.jpeg"
 const Layout = () => {
   return (
     <>
-      <nav className="navBar">
+      <nav className="navBar" >
+      <img className='navBarLogo' src = {logo1}/>
         <h1 className='navBarTitle'>GoGreen 365</h1>
-        <img className='navBarLogo' src = {logo1}/>
+        
 
-        <ul className="horizontalNav">
+        <ul className="horizontalNav" style={{ fontFamily: "Magilio" }}>
           <li>
             <Link to="/home">Home</Link>
           </li>
