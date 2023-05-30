@@ -1,6 +1,6 @@
 # GoGreen-365
 
-A green initiative by passionate youths
+A green initiative by passionate youths, developed using MERN stack.
 
 ## Table of Contents
 
