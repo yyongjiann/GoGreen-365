@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home"
-import Map from "./pages/Map";
+import Activities from "./pages/Activities";
 import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
@@ -16,9 +16,10 @@ export default function Page() {
     <div>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Map />} />
-          <Route path="home" element={<Home />} />
+        <Route path="/" element={<Layout /> }>
+          <Route index element={<Home />} />
+          
+          <Route path="activities" element={<Activities />} />
           <Route path="getstarted" element={<GetStarted />} />
           <Route path="profile" element={<Profile />} />
           <Route path="contact" element={<Contact />} />

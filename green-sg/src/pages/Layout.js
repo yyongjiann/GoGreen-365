@@ -10,15 +10,15 @@ const Layout = () => {
         <h1 className='navBarTitle'>GoGreen 365</h1>
         
 
-        <ul className="horizontalNav" style={{ fontFamily: "Magilio" }}>
+        <ul className="horizontalNav">
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/getstarted">Get started</Link>
           </li>
           <li>
-            <Link to="/">Activities</Link>
+            <Link to="/activities">Activities</Link>
           </li>
           <li>
             <Link to="/donate">Donate</Link>

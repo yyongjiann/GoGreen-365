@@ -1,13 +1,6 @@
 import React from "react";
-import Pin from "../Pin"
-import Popup from "../Popup"
-import MapComponent from "../MapComponent";
 import ListGroup from 'react-bootstrap/ListGroup';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import activites from "../activites";
+
 
 
 
@@ -43,14 +36,7 @@ const Map = () => {
 
 
 
-  const allPins = pinId.map(
-    id =>
-      <Pin
-        id={id}
-        key={id}
-        handleClick={handleClick}>
-      </Pin>
-  )
+
 
   const [dataReceived, setDataReceived] = React.useState([])
   React.useEffect(() => {
