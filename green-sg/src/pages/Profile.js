@@ -44,15 +44,7 @@ const formDataTemplate = {
 
 
   const handlePageChange = (page) => {
-    // Calculate the starting and ending indices based on the page number
-    // const itemsPerPage = 5;
-    // const startIdx = (page - 1) * itemsPerPage;
-    // const endIdx = startIdx + itemsPerPage;
-    
-    // Update the state or data to display the desired entries in the table
-    // For example, you can slice your data array to get the subset of entries to display
-    //const displayedEntries = entries.slice(startIdx, endIdx);
-    //setDisplayedEntries(displayedEntries);
+   //Future implementation for page toggling
   };
 
   const handleSubmit = (event) =>{

@@ -8,7 +8,7 @@ const GetStarted = () =>{
             src = {workflow} 
             style={{
             position: 'absolute',
-            top: '55%',
+            top: '57%',
             left: '52%',
             transform: 'translate(-50%, -50%)',
             width: '75%',

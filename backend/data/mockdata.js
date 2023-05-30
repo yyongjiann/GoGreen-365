@@ -141,6 +141,13 @@ const data = [
         mapLink: "https://goo.gl/maps/Yqi2bhqrKoaE1WHBA",
         region: "Central"
     },
+    {
+        name: "Woodlands Sports Centre Stadium Gate 3",
+        address: "1 Woodlands Street 13, Singapore 738597", 
+        mapLink: "https://goo.gl/maps/45apALzafaretPQx8",
+        region: "North"
+
+    }
 
 ]
 

@@ -1,3 +1,5 @@
+
+
 * {font-family: Arial, Helvetica, sans-serif;}
 
 @font-face {
@@ -53,4 +55,48 @@
   
   .horizontalNav li a:hover {
     background-color: #ddd;
+  }
+
+  .boxed-display {
+    background-image: url('pages/images/background1.jpg'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .boxed-display::before {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value for desired transparency */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .boxed-display .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 100px;
+  }
+  
+  .boxed-display h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .paragraph {
+    padding: 10px;
+    margin-bottom: 10px;
+    line-height: 1.6;
   }
